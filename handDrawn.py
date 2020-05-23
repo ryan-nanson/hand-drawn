@@ -8,7 +8,7 @@ import scipy.ndimage
 
 def drawImage():
     # import image
-    image_path = "me.png"
+    image_path = "resources/input/input.png"
     image = imageio.imread(image_path)
     
     grayscale_image = grayscale(image)
@@ -21,6 +21,10 @@ def drawImage():
     
     # plot the result
     plot.imshow(final_image, cmap='gray')
+    
+    # save plot
+    plot.imsave('resources/output/output.png', final_image, cmap='gray', vmin=0, vmax=255)
+
 
 # method to turn an image grayscale
 def grayscale(image): 
