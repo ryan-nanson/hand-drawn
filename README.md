@@ -1,10 +1,14 @@
 # hand-drawn
-Python code to imitate a hand drawing a given image.
+Python code to imitate a hand drawing of a given image.
 
 ## Getting Started
-Pull the code and run `python3 handDrawn.py`. This will read in the input image: 
-`resources/input/input.png` and output a hand drawn copy to `resources/output/output.png`.
-Feel free to replace `input.png` with your own image and see what happens`.
+Pull the code and run:
+
+`python3 handDrawn.py`
+
+ This will read in the input image: `resources/input/input.png` and output a 
+ hand drawn copy to `resources/output/output.png`. Feel free to replace 
+ `input.png` with your own image and see what happens`.
 
 
 ## Built with
