@@ -1,5 +1,8 @@
 # hand-drawn
-Python code to imitate a hand drawing of a given image.
+Python code to create a hand drawn image from any given image using machine vision techniques:
+
+![](resources/input/input.png) 
+![](resources/output/output.png)
 
 ## Getting Started
 Pull the code and run:
