@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-
 import imageio
-import numpy as np
-import matplotlib.pyplot as plt
+import numpy
+import matplotlib.pyplot as plot
 import scipy.ndimage
 
 def drawImage():
@@ -12,22 +11,20 @@ def drawImage():
     image_path = "me.png"
     image = imageio.imread(image_path)
     
-    # turn the image grayscale
     grayscale_image = grayscale(image)
     
-    # invert the image
     inverted_image = invert(grayscale_image)
     
-    blur_image = blur(inverted_image)
+    blured_image = blur(inverted_image)
     
-    final_image= dodge(blur_image, grayscale_image)
+    final_image= color_dodge(blured_image, grayscale_image)
     
     # plot the result
-    plt.imshow(final_image, cmap='gray')
+    plot.imshow(final_image, cmap='gray')
 
 # method to turn an image grayscale
 def grayscale(image): 
-    return np.dot(image[...,:3], [0.299, 0.587, 0.114])
+    return numpy.dot(image[...,:3], [0.299, 0.587, 0.114])
 
 # method to invert images
 def invert(grayscale_image):
@@ -41,7 +38,7 @@ def blur(image):
     return scipy.ndimage.filters.gaussian_filter(image, sigma = 12)
 
 # method to color dodge (highlights the boldest edges)
-def dodge(front, back):
+def color_dodge(front, back):
     result=front * 255 / (255 - back)
     result[result > 255] = 255 
     result[back == 255] = 255
